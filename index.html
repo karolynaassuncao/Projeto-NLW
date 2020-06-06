@@ -11,7 +11,10 @@
 
     <link rel="stylesheet" href="CSS/esilo.css">
     <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/modal.css">
+    
     <link rel="stylesheet" href="CSS/reponsive.css">
+    
 </head>
 <body>
     <div id="page-home">
@@ -20,7 +23,7 @@
             <header>
                 <img src="Icones/logo.svg" alt="Logomarca">
 
-                <a href="http://google.com.br"> <span></span>Cadastre um ponto de coleta</a>
+                <a href="create-point.html"> <span></span>Cadastre um ponto de coleta</a>
             </header>
             <main>
                     <h1 class="red">Seu marketplace de coleta de resíduos</h1>
@@ -33,4 +36,26 @@
     </div>
 
 </body>
+
+    </div>
+
+    <div id="modal" class="hide">
+        <div class="content">
+            <div class="header">
+                <h1>Pontos de coleta</h1>
+                <a href="#">Fechar</a>
+            </div>
+            <form action="search-results.html">
+                <label for="search">Cidade</label>
+                <div class="search field">
+                    <input type="text" name="search" placeholder="Pesquise por cidade">
+                    <button>
+                        <img src="Icones/search.svg" alt="Botão">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="JS/index.js"></script>
+
 </html>
