@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% set pageId = "search-results" %}
+
+{% block title %}
+    <title>Resultado</title>
+{% endblock title %}
+
+{% block styles %} 
+    <link rel="stylesheet" href="CSS/search-results.css">
+{% endblock styles %}
+
+<body>
+{% block content %}
+            {% include "partials/page-header.html" %}
+    
+            <main>
+               <h4>
+                   <strong> 2 pontos </strong> encontrados
+               </h4>
+               <div class="cards">
+                   
+                   {% for place in places %}
+                   
+                <div class="card">
+                    <img src="{{place.image}}" alt="{{place.name}}">
+                    <h1>{{place.name}}</h1>
+                    <h3>{{place.items}}</h3>
+                    <p>
+                        {{place.city}}, {{place.state}} <br/>
+                        {{place.address}} <br/>
+                        {{place.address2
+                        }}
+                    </p>
+                </div>
+                    {% endfor %}
+               </div>
+            </main>            
+{% endblock content %}    

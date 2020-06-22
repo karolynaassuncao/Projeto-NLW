@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% set pageId = "page-create-point" %}
+
+{% block title %}
+    <title>Criar ponto de coleta</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="CSS/create-point.css">
+{% endblock styles %}
+
+<body>
+    {% block content %}
+
+        {% include "partials/page-header.html" %}
+        <form action="">
+            <h1>Cadastro do ponto de coleta</h1>
+            <fieldset>
+                <legend>
+                    <h2>
+                        Dados de entidade</h2>
+                </legend>
+                <div class="field-group">
+                <div class="field">
+                    <label for="name">Nome da entidade</label>
+                    <input type="text" name="name" required="required">
+                </div>
+                <div class="field">
+                    <label for="name">Imagem de entidade</label>
+                    <input type="url" name="image" placeholder="http://" required="required">
+                </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="address">Endereço</label>
+                        <input type="text" name="address" required="required">
+                    </div>
+                    <div class="field">
+                        <label for="address2">Número/Complemento</label>
+                        <input type="text" name="address2" required="required">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="state">Estado</label>
+                        <select name="uf" required="required">
+                            <option value="">Selecione o estado</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled="disabled" required="required">
+                            <option value="">Selecione a cidade</option>
+                        </select>
+
+                        <input type="hidden" name="state">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <h2>Itens de coleta</h2>
+                    <span>Selecione um ou mais itens</span>
+                </legend>
+
+                <div class="items-grid">
+                    <li data-id="1">
+                        <img src="Icones/lampadas.svg" alt="Lâmpadas">
+                        <span>Lâmpadas</span>
+                    </li>
+                    <li data-id="2">
+                        <img src="Icones/baterias.svg" alt="Pilhas e baterias">
+                        <span>Pilhas e baterias</span>
+                    </li>
+                    <li data-id="3">
+                        <img src="Icones/papeis-papelao.svg" alt="Papéis e papelões">
+                        <span>Papéis e papelões</span>
+                    </li>
+                    <li data-id="4">
+                        <img src="Icones/eletronicos.svg" alt="Resíduos eletrônicos">
+                        <span>Resíduos eletrônicos</span>
+                    </li>
+                    <li data-id="5">
+                        <img src="Icones/organicos.svg" alt="Resíduos orgânicos">
+                        <span>Resíduos orgânicos</span>
+                    </li>
+                    <li data-id="6">
+                        <img src="Icones/oleo.svg" alt="Óleo de cozinha">
+                        <span>Óleo de cozinha</span>
+                    </li>
+
+                </div>
+
+                <input type="hidden" name="items">
+            </fieldset>
+            <button type='submit'>Cadastrar ponto de coleta</button>
+        </form>
+    {% endblock content %}
+
+
+
+{% block scripts %}
+    <script src="JS/create-point.js"></script>
+{% endblock scripts %}
